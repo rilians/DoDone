@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>DoDone - Task Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/animate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="animated-bg"></div>
+    <div class="theme-toggle animate__animated animate__fadeIn">
+        <i class="fas fa-moon"></i>
+    </div>
+    <div class="container animate__animated animate__fadeInUp">
+        <div class="loading-spinner" id="loading">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </div>
+        <h1><i class="fas fa-check-circle"></i> DoDone</h1>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <form id="task-form">
+            <div class="input-group">
+                <div class="input-wrapper">
+                    <i class="fas fa-tasks input-icon"></i>
+                    <input type="text" id="task-input" placeholder="New task..." required>
+                </div>
+                <div class="select-wrapper">
+                    <select id="task-category">
+                        <option value="general">📝 General</option>
+                        <option value="work">💼 Work</option>
+                        <option value="personal">🏠 Personal</option>
+                        <option value="shopping">🛒 Shopping</option>
+                        <option value="health">❤️ Health</option>
+                    </select>
+                    <select id="task-priority">
+                        <option value="low">🟢 Low Priority</option>
+                        <option value="medium">🟡 Medium Priority</option>
+                        <option value="high">🔴 High Priority</option>
+                    </select>
+                </div>
+                <button type="submit" class="gradient-btn">
+                    <i class="fas fa-plus"></i>
+                    <span class="btn-text">Add Task</span>
+                </button>
+            </div>
+        </form>
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+        <div class="task-list" id="task-list">
+            <!-- Tasks will be added here dynamically -->
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
